@@ -9,6 +9,8 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include Drivers/VL53L1X/platform/src/subdir.mk
+-include Drivers/VL53L1X/core/src/subdir.mk
 -include Drivers/STM32F3xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
@@ -60,8 +62,8 @@ all: main-build
 main-build: vl53l1_test.elf secondary-outputs
 
 # Tool invocations
-vl53l1_test.elf vl53l1_test.map: $(OBJS) $(USER_OBJS) /home/mochizuki/STM32CubeIDE/workspace_1.15.0/vl53l1_test/STM32F303K8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "vl53l1_test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/mochizuki/STM32CubeIDE/workspace_1.15.0/vl53l1_test/STM32F303K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vl53l1_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+vl53l1_test.elf vl53l1_test.map: $(OBJS) $(USER_OBJS) /home/mochizuki12/git/vl53l1_test/STM32F303K8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "vl53l1_test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/mochizuki12/git/vl53l1_test/STM32F303K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vl53l1_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

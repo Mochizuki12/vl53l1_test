@@ -21,7 +21,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stdio.h"
+#include "vl53l1_def.h"
+#include "vl53l1_api.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -45,7 +47,35 @@ I2C_HandleTypeDef hi2c1;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
+void I2C_Dev_Search(){
 
+    uint8_t FindNum=0;
+    uint8_t FindDev[128];
+
+    printf("*** I2C Device Search Start! ***\n\r");
+    for(int i=0; i<0xff;i=i+2){
+
+        uint8_t res=HAL_I2C_Master_Transmit(&hi2c1, i,(uint8_t*)0x00,0,50);
+        if(res==HAL_OK){
+            FindDev[FindNum]=i;
+            FindNum++;
+            printf("[0x%X] \t",i);
+        }
+        else{
+            printf("0x%X \t",i);
+        }
+
+        if((i+2)%10==0)printf("\n");
+        HAL_Delay(1);
+    }
+    printf("\nDevice Found: %d \n",FindNum);
+    for(int i=0; i<FindNum; i++){
+        printf("Device No. %d  Address: 0x%X (0x%X)\n",i+1,FindDev[i],FindDev[i]>>1);
+    }
+    printf("*** I2C Device Search Finished! ***\n\r");
+    HAL_Delay(100);
+
+}
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -59,7 +89,11 @@ static void MX_I2C1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+int _write(int file, char *ptr, int len)
+{
+  HAL_UART_Transmit(&huart2,(uint8_t *)ptr,len,10);
+  return len;
+}
 /* USER CODE END 0 */
 
 /**
@@ -70,6 +104,10 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+  setbuf(stdout, NULL);
+  int Dev=0x54;
+  uint8_t st;
+  VL53L1_RangingMeasurementData_t data;
 
   /* USER CODE END 1 */
 
@@ -94,7 +132,13 @@ int main(void)
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-  VL53L1_DataInit();
+  printf("start\n\r");
+  VL53L1_WaitDeviceBooted(&Dev);
+  printf("device booted\n\r");
+  VL53L1_DataInit(&Dev);
+  printf("data init\n\r");
+  VL53L1_StaticInit(&Dev);
+  VL53L1_StartMeasurement(&Dev);
 
   /* USER CODE END 2 */
 
@@ -102,7 +146,11 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	VL53L1_StartMeasurement();
+	VL53L1_GetMeasurementDataReady(&Dev, st);
+	VL53L1_GetRangingMeasurementData(&Dev,&data);
+	printf("VL53L1X: %02X\n\r", data.TimeStamp);
+	VL53L1_ClearInterruptAndStartMeasurement(&Dev);
+	HAL_Delay(10);
 
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
@@ -217,7 +265,7 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 38400;
+  huart2.Init.BaudRate = 115200;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;
