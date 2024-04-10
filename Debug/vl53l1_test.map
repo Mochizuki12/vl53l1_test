@@ -3056,8 +3056,6 @@ Discarded input sections
  .text          0x00000000        0x0 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
  .data          0x00000000        0x0 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
  .bss           0x00000000        0x0 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
- .text.VL53L1_software_reset
-                0x00000000       0x6a ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
  .text.VL53L1_set_part_to_part_data
                 0x00000000       0xf4 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
  .text.VL53L1_get_part_to_part_data
@@ -4543,16 +4541,12 @@ Discarded input sections
  .text          0x00000000        0x0 ./Drivers/VL53L1X/core/src/vl53l1_wait.o
  .data          0x00000000        0x0 ./Drivers/VL53L1X/core/src/vl53l1_wait.o
  .bss           0x00000000        0x0 ./Drivers/VL53L1X/core/src/vl53l1_wait.o
- .text.VL53L1_wait_for_boot_completion
-                0x00000000       0x70 ./Drivers/VL53L1X/core/src/vl53l1_wait.o
  .text.VL53L1_wait_for_firmware_ready
                 0x00000000       0x8c ./Drivers/VL53L1X/core/src/vl53l1_wait.o
  .text.VL53L1_wait_for_range_completion
                 0x00000000       0x70 ./Drivers/VL53L1X/core/src/vl53l1_wait.o
  .text.VL53L1_wait_for_test_completion
                 0x00000000       0x70 ./Drivers/VL53L1X/core/src/vl53l1_wait.o
- .text.VL53L1_is_boot_complete
-                0x00000000       0x58 ./Drivers/VL53L1X/core/src/vl53l1_wait.o
  .text.VL53L1_is_firmware_ready
                 0x00000000       0x34 ./Drivers/VL53L1X/core/src/vl53l1_wait.o
  .text.VL53L1_poll_for_firmware_ready
@@ -4724,8 +4718,6 @@ Discarded input sections
  .text          0x00000000        0x0 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
  .data          0x00000000        0x0 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
  .bss           0x00000000        0x0 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
- .text.VL53L1_WrByte
-                0x00000000       0x54 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
  .text.VL53L1_WrWord
                 0x00000000       0x64 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
  .text.VL53L1_WrDWord
@@ -5113,7 +5105,7 @@ LOAD /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.
                 0x08000000                g_pfnVectors
                 0x08000188                        . = ALIGN (0x4)
 
-.text           0x08000190     0x9e88
+.text           0x08000190     0xa00c
                 0x08000190                        . = ALIGN (0x4)
  *(.text)
  .text          0x08000190       0x40 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
@@ -5424,535 +5416,547 @@ LOAD /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.
  .text.VL53L1_read_p2p_data
                 0x080049a6      0x100 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
                 0x080049a6                VL53L1_read_p2p_data
+ .text.VL53L1_software_reset
+                0x08004aa6       0x6a ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08004aa6                VL53L1_software_reset
  .text.VL53L1_set_inter_measurement_period_ms
-                0x08004aa6       0x52 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x08004aa6                VL53L1_set_inter_measurement_period_ms
+                0x08004b10       0x52 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08004b10                VL53L1_set_inter_measurement_period_ms
  .text.VL53L1_get_inter_measurement_period_ms
-                0x08004af8       0x4c ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x08004af8                VL53L1_get_inter_measurement_period_ms
+                0x08004b62       0x4c ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08004b62                VL53L1_get_inter_measurement_period_ms
  .text.VL53L1_set_timeouts_us
-                0x08004b44       0x70 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x08004b44                VL53L1_set_timeouts_us
+                0x08004bae       0x70 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08004bae                VL53L1_set_timeouts_us
  .text.VL53L1_get_timeouts_us
-                0x08004bb4       0xd2 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x08004bb4                VL53L1_get_timeouts_us
+                0x08004c1e       0xd2 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08004c1e                VL53L1_get_timeouts_us
  .text.VL53L1_get_sequence_config_bit
-                0x08004c86       0x6e ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x08004c86                VL53L1_get_sequence_config_bit
+                0x08004cf0       0x6e ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08004cf0                VL53L1_get_sequence_config_bit
  .text.VL53L1_set_user_zone
-                0x08004cf4       0x46 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x08004cf4                VL53L1_set_user_zone
+                0x08004d5e       0x46 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08004d5e                VL53L1_set_user_zone
  .text.VL53L1_get_user_zone
-                0x08004d3a       0x44 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x08004d3a                VL53L1_get_user_zone
+                0x08004da4       0x44 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08004da4                VL53L1_get_user_zone
  .text.VL53L1_get_mode_mitigation_roi
-                0x08004d7e       0x68 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x08004d7e                VL53L1_get_mode_mitigation_roi
- *fill*         0x08004de6        0x2 
+                0x08004de8       0x68 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08004de8                VL53L1_get_mode_mitigation_roi
  .text.VL53L1_get_preset_mode_timing_cfg
-                0x08004de8      0x154 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x08004de8                VL53L1_get_preset_mode_timing_cfg
+                0x08004e50      0x154 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08004e50                VL53L1_get_preset_mode_timing_cfg
  .text.VL53L1_set_preset_mode
-                0x08004f3c      0x2ec ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x08004f3c                VL53L1_set_preset_mode
+                0x08004fa4      0x2ec ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08004fa4                VL53L1_set_preset_mode
  .text.VL53L1_get_lite_sigma_threshold
-                0x08005228       0x2c ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x08005228                VL53L1_get_lite_sigma_threshold
+                0x08005290       0x2c ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08005290                VL53L1_get_lite_sigma_threshold
  .text.VL53L1_set_lite_sigma_threshold
-                0x08005254       0x2c ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x08005254                VL53L1_set_lite_sigma_threshold
+                0x080052bc       0x2c ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x080052bc                VL53L1_set_lite_sigma_threshold
  .text.VL53L1_get_lite_min_count_rate
-                0x08005280       0x2c ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x08005280                VL53L1_get_lite_min_count_rate
+                0x080052e8       0x2c ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x080052e8                VL53L1_get_lite_min_count_rate
  .text.VL53L1_set_lite_min_count_rate
-                0x080052ac       0x2c ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x080052ac                VL53L1_set_lite_min_count_rate
+                0x08005314       0x2c ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08005314                VL53L1_set_lite_min_count_rate
  .text.VL53L1_set_vhv_loopbound
-                0x080052d8       0x40 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x080052d8                VL53L1_set_vhv_loopbound
+                0x08005340       0x40 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08005340                VL53L1_set_vhv_loopbound
  .text.VL53L1_init_and_start_range
-                0x08005318      0x4c4 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x08005318                VL53L1_init_and_start_range
+                0x08005380      0x4c4 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08005380                VL53L1_init_and_start_range
  .text.VL53L1_stop_range
-                0x080057dc       0x74 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x080057dc                VL53L1_stop_range
+                0x08005844       0x74 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08005844                VL53L1_stop_range
  .text.VL53L1_get_measurement_results
-                0x08005850      0x178 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x08005850                VL53L1_get_measurement_results
+                0x080058b8      0x178 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x080058b8                VL53L1_get_measurement_results
  .text.VL53L1_get_device_results
-                0x080059c8       0xfc ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x080059c8                VL53L1_get_device_results
+                0x08005a30       0xfc ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08005a30                VL53L1_get_device_results
  .text.VL53L1_clear_interrupt_and_enable_next_range
-                0x08005ac4       0x34 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x08005ac4                VL53L1_clear_interrupt_and_enable_next_range
+                0x08005b2c       0x34 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08005b2c                VL53L1_clear_interrupt_and_enable_next_range
  .text.VL53L1_copy_sys_and_core_results_to_range_results
-                0x08005af8      0x234 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x08005af8                VL53L1_copy_sys_and_core_results_to_range_results
+                0x08005b60      0x234 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08005b60                VL53L1_copy_sys_and_core_results_to_range_results
  .text.VL53L1_get_tuning_parm
-                0x08005d2c      0x448 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
-                0x08005d2c                VL53L1_get_tuning_parm
+                0x08005d94      0x448 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+                0x08005d94                VL53L1_get_tuning_parm
  .text.VL53L1_init_refspadchar_config_struct
-                0x08006174       0x48 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
-                0x08006174                VL53L1_init_refspadchar_config_struct
+                0x080061dc       0x48 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+                0x080061dc                VL53L1_init_refspadchar_config_struct
  .text.VL53L1_init_ssc_config_struct
-                0x080061bc       0x42 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
-                0x080061bc                VL53L1_init_ssc_config_struct
+                0x08006224       0x42 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+                0x08006224                VL53L1_init_ssc_config_struct
  .text.VL53L1_init_xtalk_config_struct
-                0x080061fe       0xc4 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
-                0x080061fe                VL53L1_init_xtalk_config_struct
+                0x08006266       0xc4 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+                0x08006266                VL53L1_init_xtalk_config_struct
  .text.VL53L1_init_offset_cal_config_struct
-                0x080062c2       0x4e ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
-                0x080062c2                VL53L1_init_offset_cal_config_struct
+                0x0800632a       0x4e ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+                0x0800632a                VL53L1_init_offset_cal_config_struct
  .text.VL53L1_init_tuning_parm_storage_struct
-                0x08006310      0x11c ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
-                0x08006310                VL53L1_init_tuning_parm_storage_struct
+                0x08006378      0x11c ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+                0x08006378                VL53L1_init_tuning_parm_storage_struct
  .text.VL53L1_preset_mode_standard_ranging
-                0x0800642c      0x23c ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
-                0x0800642c                VL53L1_preset_mode_standard_ranging
+                0x08006494      0x23c ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+                0x08006494                VL53L1_preset_mode_standard_ranging
  .text.VL53L1_preset_mode_standard_ranging_short_range
-                0x08006668       0x82 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
-                0x08006668                VL53L1_preset_mode_standard_ranging_short_range
+                0x080066d0       0x82 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+                0x080066d0                VL53L1_preset_mode_standard_ranging_short_range
  .text.VL53L1_preset_mode_standard_ranging_long_range
-                0x080066ea       0x82 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
-                0x080066ea                VL53L1_preset_mode_standard_ranging_long_range
+                0x08006752       0x82 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+                0x08006752                VL53L1_preset_mode_standard_ranging_long_range
  .text.VL53L1_preset_mode_standard_ranging_mm1_cal
-                0x0800676c       0x4a ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
-                0x0800676c                VL53L1_preset_mode_standard_ranging_mm1_cal
+                0x080067d4       0x4a ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+                0x080067d4                VL53L1_preset_mode_standard_ranging_mm1_cal
  .text.VL53L1_preset_mode_standard_ranging_mm2_cal
-                0x080067b6       0x4a ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
-                0x080067b6                VL53L1_preset_mode_standard_ranging_mm2_cal
+                0x0800681e       0x4a ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+                0x0800681e                VL53L1_preset_mode_standard_ranging_mm2_cal
  .text.VL53L1_preset_mode_timed_ranging
-                0x08006800       0x74 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
-                0x08006800                VL53L1_preset_mode_timed_ranging
+                0x08006868       0x74 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+                0x08006868                VL53L1_preset_mode_timed_ranging
  .text.VL53L1_preset_mode_timed_ranging_short_range
-                0x08006874       0x74 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
-                0x08006874                VL53L1_preset_mode_timed_ranging_short_range
+                0x080068dc       0x74 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+                0x080068dc                VL53L1_preset_mode_timed_ranging_short_range
  .text.VL53L1_preset_mode_timed_ranging_long_range
-                0x080068e8       0x74 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
-                0x080068e8                VL53L1_preset_mode_timed_ranging_long_range
+                0x08006950       0x74 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+                0x08006950                VL53L1_preset_mode_timed_ranging_long_range
  .text.VL53L1_preset_mode_low_power_auto_ranging
-                0x0800695c       0x4c ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
-                0x0800695c                VL53L1_preset_mode_low_power_auto_ranging
+                0x080069c4       0x4c ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+                0x080069c4                VL53L1_preset_mode_low_power_auto_ranging
  .text.VL53L1_preset_mode_low_power_auto_short_ranging
-                0x080069a8       0x4c ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
-                0x080069a8                VL53L1_preset_mode_low_power_auto_short_ranging
+                0x08006a10       0x4c ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+                0x08006a10                VL53L1_preset_mode_low_power_auto_short_ranging
  .text.VL53L1_preset_mode_low_power_auto_long_ranging
-                0x080069f4       0x4c ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
-                0x080069f4                VL53L1_preset_mode_low_power_auto_long_ranging
+                0x08006a5c       0x4c ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+                0x08006a5c                VL53L1_preset_mode_low_power_auto_long_ranging
  .text.VL53L1_preset_mode_singleshot_ranging
-                0x08006a40       0x6c ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
-                0x08006a40                VL53L1_preset_mode_singleshot_ranging
+                0x08006aa8       0x6c ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+                0x08006aa8                VL53L1_preset_mode_singleshot_ranging
  .text.VL53L1_preset_mode_olt
-                0x08006aac       0x44 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
-                0x08006aac                VL53L1_preset_mode_olt
+                0x08006b14       0x44 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+                0x08006b14                VL53L1_preset_mode_olt
  .text.VL53L1_init_version
-                0x08006af0       0x38 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x08006af0                VL53L1_init_version
+                0x08006b58       0x38 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08006b58                VL53L1_init_version
  .text.VL53L1_init_ll_driver_state
-                0x08006b28       0x52 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x08006b28                VL53L1_init_ll_driver_state
- *fill*         0x08006b7a        0x2 
+                0x08006b90       0x52 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08006b90                VL53L1_init_ll_driver_state
+ *fill*         0x08006be2        0x2 
  .text.VL53L1_update_ll_driver_rd_state
-                0x08006b7c      0x110 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x08006b7c                VL53L1_update_ll_driver_rd_state
+                0x08006be4      0x110 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08006be4                VL53L1_update_ll_driver_rd_state
  .text.VL53L1_check_ll_driver_rd_state
-                0x08006c8c       0x96 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x08006c8c                VL53L1_check_ll_driver_rd_state
+                0x08006cf4       0x96 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08006cf4                VL53L1_check_ll_driver_rd_state
  .text.VL53L1_update_ll_driver_cfg_state
-                0x08006d22       0xcc ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x08006d22                VL53L1_update_ll_driver_cfg_state
+                0x08006d8a       0xcc ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08006d8a                VL53L1_update_ll_driver_cfg_state
  .text.VL53L1_copy_rtn_good_spads_to_buffer
-                0x08006dee      0x174 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x08006dee                VL53L1_copy_rtn_good_spads_to_buffer
+                0x08006e56      0x174 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08006e56                VL53L1_copy_rtn_good_spads_to_buffer
  .text.VL53L1_i2c_encode_uint16_t
-                0x08006f62       0x56 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x08006f62                VL53L1_i2c_encode_uint16_t
+                0x08006fca       0x56 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08006fca                VL53L1_i2c_encode_uint16_t
  .text.VL53L1_i2c_decode_uint16_t
-                0x08006fb8       0x40 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x08006fb8                VL53L1_i2c_decode_uint16_t
+                0x08007020       0x40 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08007020                VL53L1_i2c_decode_uint16_t
  .text.VL53L1_i2c_encode_int16_t
-                0x08006ff8       0x58 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x08006ff8                VL53L1_i2c_encode_int16_t
+                0x08007060       0x58 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08007060                VL53L1_i2c_encode_int16_t
  .text.VL53L1_i2c_decode_int16_t
-                0x08007050       0x52 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x08007050                VL53L1_i2c_decode_int16_t
+                0x080070b8       0x52 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x080070b8                VL53L1_i2c_decode_int16_t
  .text.VL53L1_i2c_encode_uint32_t
-                0x080070a2       0x54 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x080070a2                VL53L1_i2c_encode_uint32_t
+                0x0800710a       0x54 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x0800710a                VL53L1_i2c_encode_uint32_t
  .text.VL53L1_i2c_decode_uint32_t
-                0x080070f6       0x3a ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x080070f6                VL53L1_i2c_decode_uint32_t
+                0x0800715e       0x3a ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x0800715e                VL53L1_i2c_decode_uint32_t
  .text.VL53L1_i2c_decode_int32_t
-                0x08007130       0x4a ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x08007130                VL53L1_i2c_decode_int32_t
+                0x08007198       0x4a ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08007198                VL53L1_i2c_decode_int32_t
  .text.VL53L1_calc_macro_period_us
-                0x0800717a       0x5e ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x0800717a                VL53L1_calc_macro_period_us
+                0x080071e2       0x5e ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x080071e2                VL53L1_calc_macro_period_us
  .text.VL53L1_calc_range_ignore_threshold
-                0x080071d8       0xc4 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x080071d8                VL53L1_calc_range_ignore_threshold
+                0x08007240       0xc4 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08007240                VL53L1_calc_range_ignore_threshold
  .text.VL53L1_calc_timeout_mclks
-                0x0800729c       0x2e ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x0800729c                VL53L1_calc_timeout_mclks
+                0x08007304       0x2e ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08007304                VL53L1_calc_timeout_mclks
  .text.VL53L1_calc_encoded_timeout
-                0x080072ca       0x30 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x080072ca                VL53L1_calc_encoded_timeout
+                0x08007332       0x30 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08007332                VL53L1_calc_encoded_timeout
  .text.VL53L1_calc_timeout_us
-                0x080072fa       0x80 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x080072fa                VL53L1_calc_timeout_us
+                0x08007362       0x80 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08007362                VL53L1_calc_timeout_us
  .text.VL53L1_calc_decoded_timeout_us
-                0x0800737a       0x32 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x0800737a                VL53L1_calc_decoded_timeout_us
+                0x080073e2       0x32 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x080073e2                VL53L1_calc_decoded_timeout_us
  .text.VL53L1_encode_timeout
-                0x080073ac       0x54 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x080073ac                VL53L1_encode_timeout
+                0x08007414       0x54 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08007414                VL53L1_encode_timeout
  .text.VL53L1_decode_timeout
-                0x08007400       0x2c ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x08007400                VL53L1_decode_timeout
+                0x08007468       0x2c ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08007468                VL53L1_decode_timeout
  .text.VL53L1_calc_timeout_register_values
-                0x0800742c       0xf2 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x0800742c                VL53L1_calc_timeout_register_values
+                0x08007494       0xf2 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08007494                VL53L1_calc_timeout_register_values
  .text.VL53L1_encode_row_col
-                0x0800751e       0x4e ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x0800751e                VL53L1_encode_row_col
+                0x08007586       0x4e ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08007586                VL53L1_encode_row_col
  .text.VL53L1_decode_zone_size
-                0x0800756c       0x30 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x0800756c                VL53L1_decode_zone_size
+                0x080075d4       0x30 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x080075d4                VL53L1_decode_zone_size
  .text.VL53L1_encode_zone_size
-                0x0800759c       0x2c ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x0800759c                VL53L1_encode_zone_size
+                0x08007604       0x2c ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08007604                VL53L1_encode_zone_size
  .text.VL53L1_low_power_auto_data_init
-                0x080075c8       0x68 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x080075c8                VL53L1_low_power_auto_data_init
+                0x08007630       0x68 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08007630                VL53L1_low_power_auto_data_init
  .text.VL53L1_low_power_auto_data_stop_range
-                0x08007630       0x74 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x08007630                VL53L1_low_power_auto_data_stop_range
+                0x08007698       0x74 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x08007698                VL53L1_low_power_auto_data_stop_range
  .text.VL53L1_config_low_power_auto_mode
-                0x080076a4       0x40 ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x080076a4                VL53L1_config_low_power_auto_mode
+                0x0800770c       0x40 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x0800770c                VL53L1_config_low_power_auto_mode
  .text.VL53L1_low_power_auto_setup_manual_calibration
-                0x080076e4       0x8a ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x080076e4                VL53L1_low_power_auto_setup_manual_calibration
+                0x0800774c       0x8a ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x0800774c                VL53L1_low_power_auto_setup_manual_calibration
  .text.VL53L1_low_power_auto_update_DSS
-                0x0800776e       0xee ./Drivers/VL53L1X/core/src/vl53l1_core.o
-                0x0800776e                VL53L1_low_power_auto_update_DSS
+                0x080077d6       0xee ./Drivers/VL53L1X/core/src/vl53l1_core.o
+                0x080077d6                VL53L1_low_power_auto_update_DSS
  .text.VL53L1_calc_pll_period_us
-                0x0800785c       0x28 ./Drivers/VL53L1X/core/src/vl53l1_core_support.o
-                0x0800785c                VL53L1_calc_pll_period_us
+                0x080078c4       0x28 ./Drivers/VL53L1X/core/src/vl53l1_core_support.o
+                0x080078c4                VL53L1_calc_pll_period_us
  .text.VL53L1_decode_vcsel_period
-                0x08007884       0x26 ./Drivers/VL53L1X/core/src/vl53l1_core_support.o
-                0x08007884                VL53L1_decode_vcsel_period
+                0x080078ec       0x26 ./Drivers/VL53L1X/core/src/vl53l1_core_support.o
+                0x080078ec                VL53L1_decode_vcsel_period
  .text.VL53L1_decode_row_col
-                0x080078aa       0x5e ./Drivers/VL53L1X/core/src/vl53l1_core_support.o
-                0x080078aa                VL53L1_decode_row_col
+                0x08007912       0x5e ./Drivers/VL53L1X/core/src/vl53l1_core_support.o
+                0x08007912                VL53L1_decode_row_col
  .text.VL53L1_i2c_encode_static_nvm_managed
-                0x08007908       0xb6 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
-                0x08007908                VL53L1_i2c_encode_static_nvm_managed
+                0x08007970       0xb6 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
+                0x08007970                VL53L1_i2c_encode_static_nvm_managed
  .text.VL53L1_i2c_decode_static_nvm_managed
-                0x080079be       0xb4 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
-                0x080079be                VL53L1_i2c_decode_static_nvm_managed
+                0x08007a26       0xb4 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
+                0x08007a26                VL53L1_i2c_decode_static_nvm_managed
  .text.VL53L1_get_static_nvm_managed
-                0x08007a72       0x4e ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
-                0x08007a72                VL53L1_get_static_nvm_managed
+                0x08007ada       0x4e ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
+                0x08007ada                VL53L1_get_static_nvm_managed
  .text.VL53L1_i2c_encode_customer_nvm_managed
-                0x08007ac0      0x114 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
-                0x08007ac0                VL53L1_i2c_encode_customer_nvm_managed
+                0x08007b28      0x114 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
+                0x08007b28                VL53L1_i2c_encode_customer_nvm_managed
  .text.VL53L1_i2c_decode_customer_nvm_managed
-                0x08007bd4      0x11a ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
-                0x08007bd4                VL53L1_i2c_decode_customer_nvm_managed
+                0x08007c3c      0x11a ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
+                0x08007c3c                VL53L1_i2c_decode_customer_nvm_managed
  .text.VL53L1_get_customer_nvm_managed
-                0x08007cee       0x4e ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
-                0x08007cee                VL53L1_get_customer_nvm_managed
+                0x08007d56       0x4e ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
+                0x08007d56                VL53L1_get_customer_nvm_managed
  .text.VL53L1_i2c_encode_static_config
-                0x08007d3c      0x1c6 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
-                0x08007d3c                VL53L1_i2c_encode_static_config
+                0x08007da4      0x1c6 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
+                0x08007da4                VL53L1_i2c_encode_static_config
  .text.VL53L1_i2c_encode_general_config
-                0x08007f02      0x108 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
-                0x08007f02                VL53L1_i2c_encode_general_config
+                0x08007f6a      0x108 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
+                0x08007f6a                VL53L1_i2c_encode_general_config
  .text.VL53L1_i2c_encode_timing_config
-                0x0800800a      0x104 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
-                0x0800800a                VL53L1_i2c_encode_timing_config
+                0x08008072      0x104 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
+                0x08008072                VL53L1_i2c_encode_timing_config
  .text.VL53L1_i2c_encode_dynamic_config
-                0x0800810e      0x10a ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
-                0x0800810e                VL53L1_i2c_encode_dynamic_config
+                0x08008176      0x10a ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
+                0x08008176                VL53L1_i2c_encode_dynamic_config
  .text.VL53L1_i2c_encode_system_control
-                0x08008218       0x76 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
-                0x08008218                VL53L1_i2c_encode_system_control
+                0x08008280       0x76 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
+                0x08008280                VL53L1_i2c_encode_system_control
  .text.VL53L1_set_system_control
-                0x0800828e       0x4e ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
-                0x0800828e                VL53L1_set_system_control
+                0x080082f6       0x4e ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
+                0x080082f6                VL53L1_set_system_control
  .text.VL53L1_i2c_decode_system_results
-                0x080082dc      0x1ec ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
-                0x080082dc                VL53L1_i2c_decode_system_results
+                0x08008344      0x1ec ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
+                0x08008344                VL53L1_i2c_decode_system_results
  .text.VL53L1_i2c_decode_core_results
-                0x080084c8       0xc2 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
-                0x080084c8                VL53L1_i2c_decode_core_results
+                0x08008530       0xc2 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
+                0x08008530                VL53L1_i2c_decode_core_results
  .text.VL53L1_i2c_decode_debug_results
-                0x0800858a      0x2e4 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
-                0x0800858a                VL53L1_i2c_decode_debug_results
+                0x080085f2      0x2e4 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
+                0x080085f2                VL53L1_i2c_decode_debug_results
  .text.VL53L1_i2c_decode_nvm_copy_data
-                0x0800886e      0x24c ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
-                0x0800886e                VL53L1_i2c_decode_nvm_copy_data
+                0x080088d6      0x24c ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
+                0x080088d6                VL53L1_i2c_decode_nvm_copy_data
  .text.VL53L1_get_nvm_copy_data
-                0x08008aba       0x56 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
-                0x08008aba                VL53L1_get_nvm_copy_data
+                0x08008b22       0x56 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
+                0x08008b22                VL53L1_get_nvm_copy_data
+ .text.VL53L1_wait_for_boot_completion
+                0x08008b78       0x70 ./Drivers/VL53L1X/core/src/vl53l1_wait.o
+                0x08008b78                VL53L1_wait_for_boot_completion
+ .text.VL53L1_is_boot_complete
+                0x08008be8       0x58 ./Drivers/VL53L1X/core/src/vl53l1_wait.o
+                0x08008be8                VL53L1_is_boot_complete
  .text.VL53L1_is_new_data_ready
-                0x08008b10       0x72 ./Drivers/VL53L1X/core/src/vl53l1_wait.o
-                0x08008b10                VL53L1_is_new_data_ready
+                0x08008c40       0x72 ./Drivers/VL53L1X/core/src/vl53l1_wait.o
+                0x08008c40                VL53L1_is_new_data_ready
  .text.VL53L1_poll_for_boot_completion
-                0x08008b82       0x58 ./Drivers/VL53L1X/core/src/vl53l1_wait.o
-                0x08008b82                VL53L1_poll_for_boot_completion
+                0x08008cb2       0x58 ./Drivers/VL53L1X/core/src/vl53l1_wait.o
+                0x08008cb2                VL53L1_poll_for_boot_completion
  .text._I2CWrite
-                0x08008bda       0x3e ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
-                0x08008bda                _I2CWrite
+                0x08008d0a       0x3e ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
+                0x08008d0a                _I2CWrite
  .text._I2CRead
-                0x08008c18       0x44 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
-                0x08008c18                _I2CRead
+                0x08008d48       0x44 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
+                0x08008d48                _I2CRead
  .text.VL53L1_WriteMulti
-                0x08008c5c       0x6c ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
-                0x08008c5c                VL53L1_WriteMulti
+                0x08008d8c       0x6c ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
+                0x08008d8c                VL53L1_WriteMulti
  .text.VL53L1_ReadMulti
-                0x08008cc8       0x6c ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
-                0x08008cc8                VL53L1_ReadMulti
+                0x08008df8       0x6c ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
+                0x08008df8                VL53L1_ReadMulti
+ .text.VL53L1_WrByte
+                0x08008e64       0x54 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
+                0x08008e64                VL53L1_WrByte
  .text.VL53L1_RdByte
-                0x08008d34       0x68 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
-                0x08008d34                VL53L1_RdByte
+                0x08008eb8       0x68 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
+                0x08008eb8                VL53L1_RdByte
  .text.VL53L1_RdWord
-                0x08008d9c       0x7c ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
-                0x08008d9c                VL53L1_RdWord
+                0x08008f20       0x7c ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
+                0x08008f20                VL53L1_RdWord
  .text.VL53L1_GetTickCount
-                0x08008e18       0x22 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
-                0x08008e18                VL53L1_GetTickCount
+                0x08008f9c       0x22 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
+                0x08008f9c                VL53L1_GetTickCount
  .text.VL53L1_WaitMs
-                0x08008e3a       0x1c ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
-                0x08008e3a                VL53L1_WaitMs
- *fill*         0x08008e56        0x2 
+                0x08008fbe       0x1c ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
+                0x08008fbe                VL53L1_WaitMs
+ *fill*         0x08008fda        0x2 
  .text.VL53L1_WaitUs
-                0x08008e58       0x2c ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
-                0x08008e58                VL53L1_WaitUs
+                0x08008fdc       0x2c ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
+                0x08008fdc                VL53L1_WaitUs
  .text.VL53L1_WaitValueMaskEx
-                0x08008e84      0x154 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
-                0x08008e84                VL53L1_WaitValueMaskEx
- .text.std      0x08008fd8       0x6c /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+                0x08009008      0x154 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
+                0x08009008                VL53L1_WaitValueMaskEx
+ .text.std      0x0800915c       0x6c /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
  .text.stdio_exit_handler
-                0x08009044       0x18 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+                0x080091c8       0x18 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
  .text.cleanup_stdio
-                0x0800905c       0x40 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+                0x080091e0       0x40 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
  .text.global_stdio_init.part.0
-                0x0800909c       0x3c /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+                0x08009220       0x3c /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
  .text.__sfp_lock_acquire
-                0x080090d8        0xc /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
-                0x080090d8                __sfp_lock_acquire
+                0x0800925c        0xc /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+                0x0800925c                __sfp_lock_acquire
  .text.__sfp_lock_release
-                0x080090e4        0xc /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
-                0x080090e4                __sfp_lock_release
- .text.__sinit  0x080090f0       0x30 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
-                0x080090f0                __sinit
+                0x08009268        0xc /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+                0x08009268                __sfp_lock_release
+ .text.__sinit  0x08009274       0x30 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+                0x08009274                __sinit
  .text._fwalk_sglue
-                0x08009120       0x3c /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
-                0x08009120                _fwalk_sglue
- .text.printf   0x0800915c       0x24 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-printf.o)
-                0x0800915c                printf
-                0x0800915c                iprintf
- .text.setbuf   0x08009180       0x10 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-setbuf.o)
-                0x08009180                setbuf
- .text.setvbuf  0x08009190      0x168 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-setvbuf.o)
-                0x08009190                setvbuf
- .text.__sread  0x080092f8       0x22 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
-                0x080092f8                __sread
+                0x080092a4       0x3c /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
+                0x080092a4                _fwalk_sglue
+ .text.printf   0x080092e0       0x24 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-printf.o)
+                0x080092e0                printf
+                0x080092e0                iprintf
+ .text.setbuf   0x08009304       0x10 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-setbuf.o)
+                0x08009304                setbuf
+ .text.setvbuf  0x08009314      0x168 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-setvbuf.o)
+                0x08009314                setvbuf
+ .text.__sread  0x0800947c       0x22 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
+                0x0800947c                __sread
  .text.__swrite
-                0x0800931a       0x38 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
-                0x0800931a                __swrite
- .text.__sseek  0x08009352       0x24 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
-                0x08009352                __sseek
+                0x0800949e       0x38 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
+                0x0800949e                __swrite
+ .text.__sseek  0x080094d6       0x24 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
+                0x080094d6                __sseek
  .text.__sclose
-                0x08009376        0x8 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
-                0x08009376                __sclose
- .text.memset   0x0800937e       0x10 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
-                0x0800937e                memset
- .text.strncpy  0x0800938e       0x26 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-strncpy.o)
-                0x0800938e                strncpy
+                0x080094fa        0x8 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
+                0x080094fa                __sclose
+ .text.memset   0x08009502       0x10 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+                0x08009502                memset
+ .text.strncpy  0x08009512       0x26 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-strncpy.o)
+                0x08009512                strncpy
  .text._close_r
-                0x080093b4       0x20 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
-                0x080093b4                _close_r
+                0x08009538       0x20 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
+                0x08009538                _close_r
  .text._lseek_r
-                0x080093d4       0x24 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
-                0x080093d4                _lseek_r
- .text._read_r  0x080093f8       0x24 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
-                0x080093f8                _read_r
+                0x08009558       0x24 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
+                0x08009558                _lseek_r
+ .text._read_r  0x0800957c       0x24 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
+                0x0800957c                _read_r
  .text._write_r
-                0x0800941c       0x24 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
-                0x0800941c                _write_r
- .text.__errno  0x08009440        0xc /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-errno.o)
-                0x08009440                __errno
+                0x080095a0       0x24 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
+                0x080095a0                _write_r
+ .text.__errno  0x080095c4        0xc /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-errno.o)
+                0x080095c4                __errno
  .text.__libc_init_array
-                0x0800944c       0x48 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
-                0x0800944c                __libc_init_array
+                0x080095d0       0x48 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+                0x080095d0                __libc_init_array
  .text.__retarget_lock_init_recursive
-                0x08009494        0x2 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
-                0x08009494                __retarget_lock_init_recursive
+                0x08009618        0x2 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
+                0x08009618                __retarget_lock_init_recursive
  .text.__retarget_lock_acquire_recursive
-                0x08009496        0x2 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
-                0x08009496                __retarget_lock_acquire_recursive
+                0x0800961a        0x2 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
+                0x0800961a                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x08009498        0x2 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
-                0x08009498                __retarget_lock_release_recursive
- .text.memcpy   0x0800949a       0x1c /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcpy-stub.o)
-                0x0800949a                memcpy
- *fill*         0x080094b6        0x2 
- .text._free_r  0x080094b8       0x94 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
-                0x080094b8                _free_r
- .text.malloc   0x0800954c       0x10 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-malloc.o)
-                0x0800954c                malloc
+                0x0800961c        0x2 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
+                0x0800961c                __retarget_lock_release_recursive
+ .text.memcpy   0x0800961e       0x1c /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcpy-stub.o)
+                0x0800961e                memcpy
+ *fill*         0x0800963a        0x2 
+ .text._free_r  0x0800963c       0x94 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
+                0x0800963c                _free_r
+ .text.malloc   0x080096d0       0x10 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-malloc.o)
+                0x080096d0                malloc
  .text.sbrk_aligned
-                0x0800955c       0x44 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+                0x080096e0       0x44 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
  .text._malloc_r
-                0x080095a0      0x100 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
-                0x080095a0                _malloc_r
+                0x08009724      0x100 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+                0x08009724                _malloc_r
  .text.__malloc_lock
-                0x080096a0        0xc /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
-                0x080096a0                __malloc_lock
+                0x08009824        0xc /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
+                0x08009824                __malloc_lock
  .text.__malloc_unlock
-                0x080096ac        0xc /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
-                0x080096ac                __malloc_unlock
+                0x08009830        0xc /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
+                0x08009830                __malloc_unlock
  .text.__sfputc_r
-                0x080096b8       0x2e /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf.o)
+                0x0800983c       0x2e /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf.o)
  .text.__sfputs_r
-                0x080096e6       0x24 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf.o)
-                0x080096e6                __sfputs_r
- *fill*         0x0800970a        0x2 
+                0x0800986a       0x24 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf.o)
+                0x0800986a                __sfputs_r
+ *fill*         0x0800988e        0x2 
  .text._vfprintf_r
-                0x0800970c      0x230 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf.o)
-                0x0800970c                _vfiprintf_r
-                0x0800970c                _vfprintf_r
+                0x08009890      0x230 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf.o)
+                0x08009890                _vfiprintf_r
+                0x08009890                _vfprintf_r
  .text._printf_common
-                0x0800993c       0xda /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
-                0x0800993c                _printf_common
- *fill*         0x08009a16        0x2 
+                0x08009ac0       0xda /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x08009ac0                _printf_common
+ *fill*         0x08009b9a        0x2 
  .text._printf_i
-                0x08009a18      0x240 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
-                0x08009a18                _printf_i
+                0x08009b9c      0x240 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x08009b9c                _printf_i
  .text.__sflush_r
-                0x08009c58      0x108 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
-                0x08009c58                __sflush_r
+                0x08009ddc      0x108 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
+                0x08009ddc                __sflush_r
  .text._fflush_r
-                0x08009d60       0x50 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
-                0x08009d60                _fflush_r
+                0x08009ee4       0x50 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
+                0x08009ee4                _fflush_r
  .text.__swhatbuf_r
-                0x08009db0       0x4c /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-makebuf.o)
-                0x08009db0                __swhatbuf_r
+                0x08009f34       0x4c /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-makebuf.o)
+                0x08009f34                __swhatbuf_r
  .text.__smakebuf_r
-                0x08009dfc       0x78 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-makebuf.o)
-                0x08009dfc                __smakebuf_r
+                0x08009f80       0x78 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-makebuf.o)
+                0x08009f80                __smakebuf_r
  .text.__swbuf_r
-                0x08009e74       0x7c /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-wbuf.o)
-                0x08009e74                __swbuf_r
+                0x08009ff8       0x7c /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-wbuf.o)
+                0x08009ff8                __swbuf_r
  .text.__swsetup_r
-                0x08009ef0       0xac /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-wsetup.o)
-                0x08009ef0                __swsetup_r
+                0x0800a074       0xac /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-wsetup.o)
+                0x0800a074                __swsetup_r
  .text._fstat_r
-                0x08009f9c       0x24 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fstatr.o)
-                0x08009f9c                _fstat_r
+                0x0800a120       0x24 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fstatr.o)
+                0x0800a120                _fstat_r
  .text._isatty_r
-                0x08009fc0       0x20 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-isattyr.o)
-                0x08009fc0                _isatty_r
- .text._sbrk_r  0x08009fe0       0x20 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
-                0x08009fe0                _sbrk_r
+                0x0800a144       0x20 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-isattyr.o)
+                0x0800a144                _isatty_r
+ .text._sbrk_r  0x0800a164       0x20 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
+                0x0800a164                _sbrk_r
  *(.glue_7)
- .glue_7        0x0800a000        0x0 linker stubs
+ .glue_7        0x0800a184        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0800a000        0x0 linker stubs
+ .glue_7t       0x0800a184        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0800a000        0x0 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x0800a184        0x0 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x0800a000        0x4 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x0800a000                _init
- .init          0x0800a004        0x8 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x0800a184        0x4 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x0800a184                _init
+ .init          0x0800a188        0x8 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x0800a00c        0x4 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x0800a00c                _fini
- .fini          0x0800a010        0x8 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x0800a018                        . = ALIGN (0x4)
-                0x0800a018                        _etext = .
+ .fini          0x0800a190        0x4 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x0800a190                _fini
+ .fini          0x0800a194        0x8 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x0800a19c                        . = ALIGN (0x4)
+                0x0800a19c                        _etext = .
 
-.vfp11_veneer   0x0800a018        0x0
- .vfp11_veneer  0x0800a018        0x0 linker stubs
+.vfp11_veneer   0x0800a19c        0x0
+ .vfp11_veneer  0x0800a19c        0x0 linker stubs
 
-.v4_bx          0x0800a018        0x0
- .v4_bx         0x0800a018        0x0 linker stubs
+.v4_bx          0x0800a19c        0x0
+ .v4_bx         0x0800a19c        0x0 linker stubs
 
-.iplt           0x0800a018        0x0
- .iplt          0x0800a018        0x0 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x0800a19c        0x0
+ .iplt          0x0800a19c        0x0 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x0800a018      0x178
-                0x0800a018                        . = ALIGN (0x4)
+.rodata         0x0800a19c      0x154
+                0x0800a19c                        . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x0800a018       0xd0 ./Core/Src/main.o
- .rodata        0x0800a0e8       0x37 ./Drivers/VL53L1X/core/src/vl53l1_api.o
- *fill*         0x0800a11f        0x1 
- .rodata        0x0800a120        0x1 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
+ .rodata        0x0800a19c       0xaa ./Core/Src/main.o
+ *fill*         0x0800a246        0x2 
+ .rodata        0x0800a248       0x37 ./Drivers/VL53L1X/core/src/vl53l1_api.o
+ *fill*         0x0800a27f        0x1 
+ .rodata        0x0800a280        0x1 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
  *(.rodata*)
- *fill*         0x0800a121        0x3 
+ *fill*         0x0800a281        0x3 
  .rodata.AHBPrescTable
-                0x0800a124       0x10 ./Core/Src/system_stm32f3xx.o
-                0x0800a124                AHBPrescTable
+                0x0800a284       0x10 ./Core/Src/system_stm32f3xx.o
+                0x0800a284                AHBPrescTable
  .rodata.APBPrescTable
-                0x0800a134        0x8 ./Core/Src/system_stm32f3xx.o
-                0x0800a134                APBPrescTable
+                0x0800a294        0x8 ./Core/Src/system_stm32f3xx.o
+                0x0800a294                APBPrescTable
  .rodata.aPLLMULFactorTable
-                0x0800a13c       0x10 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o
+                0x0800a29c       0x10 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o
  .rodata.aPredivFactorTable
-                0x0800a14c       0x10 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o
+                0x0800a2ac       0x10 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o
  .rodata._vfprintf_r.str1.1
-                0x0800a15c       0x11 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf.o)
+                0x0800a2bc       0x11 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf.o)
  .rodata._printf_i.str1.1
-                0x0800a16d       0x22 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
-                0x0800a190                        . = ALIGN (0x4)
- *fill*         0x0800a18f        0x1 
+                0x0800a2cd       0x22 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x0800a2f0                        . = ALIGN (0x4)
+ *fill*         0x0800a2ef        0x1 
 
-.ARM.extab      0x0800a190        0x0
-                0x0800a190                        . = ALIGN (0x4)
+.ARM.extab      0x0800a2f0        0x0
+                0x0800a2f0                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0800a190                        . = ALIGN (0x4)
+                0x0800a2f0                        . = ALIGN (0x4)
 
-.ARM            0x0800a190        0x8
-                0x0800a190                        . = ALIGN (0x4)
-                0x0800a190                        __exidx_start = .
+.ARM            0x0800a2f0        0x8
+                0x0800a2f0                        . = ALIGN (0x4)
+                0x0800a2f0                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x0800a190        0x8 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memchr.o)
-                0x0800a198                        __exidx_end = .
-                0x0800a198                        . = ALIGN (0x4)
+ .ARM.exidx     0x0800a2f0        0x8 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memchr.o)
+                0x0800a2f8                        __exidx_end = .
+                0x0800a2f8                        . = ALIGN (0x4)
 
-.preinit_array  0x0800a198        0x0
-                0x0800a198                        . = ALIGN (0x4)
-                0x0800a198                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0800a2f8        0x0
+                0x0800a2f8                        . = ALIGN (0x4)
+                0x0800a2f8                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0800a198                        PROVIDE (__preinit_array_end = .)
-                0x0800a198                        . = ALIGN (0x4)
+                0x0800a2f8                        PROVIDE (__preinit_array_end = .)
+                0x0800a2f8                        . = ALIGN (0x4)
 
-.init_array     0x0800a198        0x4
-                0x0800a198                        . = ALIGN (0x4)
-                0x0800a198                        PROVIDE (__init_array_start = .)
+.init_array     0x0800a2f8        0x4
+                0x0800a2f8                        . = ALIGN (0x4)
+                0x0800a2f8                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x0800a198        0x4 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x0800a19c                        PROVIDE (__init_array_end = .)
-                0x0800a19c                        . = ALIGN (0x4)
+ .init_array    0x0800a2f8        0x4 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x0800a2fc                        PROVIDE (__init_array_end = .)
+                0x0800a2fc                        . = ALIGN (0x4)
 
-.fini_array     0x0800a19c        0x4
-                0x0800a19c                        . = ALIGN (0x4)
+.fini_array     0x0800a2fc        0x4
+                0x0800a2fc                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0800a19c        0x4 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x0800a2fc        0x4 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x0800a1a0                        . = ALIGN (0x4)
-                0x0800a1a0                        _sidata = LOADADDR (.data)
+                0x0800a300                        . = ALIGN (0x4)
+                0x0800a300                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x0800a1a0        0x0
- .rel.iplt      0x0800a1a0        0x0 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x0800a300        0x0
+ .rel.iplt      0x0800a300        0x0 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x20000000       0x88 load address 0x0800a1a0
+.data           0x20000000       0x88 load address 0x0800a300
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -5980,12 +5984,12 @@ LOAD /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.
  *(.RamFunc*)
                 0x20000088                        . = ALIGN (0x4)
                 0x20000088                        _edata = .
-                0x0800a228                        _siccmram = LOADADDR (.ccmram)
+                0x0800a388                        _siccmram = LOADADDR (.ccmram)
 
-.igot.plt       0x20000088        0x0 load address 0x0800a228
+.igot.plt       0x20000088        0x0 load address 0x0800a388
  .igot.plt      0x20000088        0x0 /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.ccmram         0x10000000        0x0 load address 0x0800a228
+.ccmram         0x10000000        0x0 load address 0x0800a388
                 0x10000000                        . = ALIGN (0x4)
                 0x10000000                        _sccmram = .
  *(.ccmram)
@@ -6178,30 +6182,30 @@ LOAD /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.
 LOAD /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a
 LOAD /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/libgcc.a
 
-.debug_info     0x00000000    0x23d98
- .debug_info    0x00000000     0x3408 ./Core/Src/main.o
- .debug_info    0x00003408      0xc76 ./Core/Src/stm32f3xx_hal_msp.o
- .debug_info    0x0000407e      0x113 ./Core/Src/stm32f3xx_it.o
- .debug_info    0x00004191      0x6a3 ./Core/Src/syscalls.o
- .debug_info    0x00004834      0x168 ./Core/Src/sysmem.o
- .debug_info    0x0000499c      0x407 ./Core/Src/system_stm32f3xx.o
- .debug_info    0x00004da3       0x30 ./Core/Startup/startup_stm32f303k8tx.o
- .debug_info    0x00004dd3      0x74a ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o
- .debug_info    0x0000551d      0xa87 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o
- .debug_info    0x00005fa4      0x6a6 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.o
- .debug_info    0x0000664a     0x2048 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.o
- .debug_info    0x00008692      0x8cc ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.o
- .debug_info    0x00008f5e     0x14f1 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o
- .debug_info    0x0000a44f      0x550 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
- .debug_info    0x0000a99f     0x39a8 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o
- .debug_info    0x0000e347     0x4b11 ./Drivers/VL53L1X/core/src/vl53l1_api.o
- .debug_info    0x00012e58     0x422e ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
- .debug_info    0x00017086     0x1426 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
- .debug_info    0x000184ac     0x3945 ./Drivers/VL53L1X/core/src/vl53l1_core.o
- .debug_info    0x0001bdf1      0x182 ./Drivers/VL53L1X/core/src/vl53l1_core_support.o
- .debug_info    0x0001bf73     0x2cb3 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
- .debug_info    0x0001ec26     0x276b ./Drivers/VL53L1X/core/src/vl53l1_wait.o
- .debug_info    0x00021391     0x2a07 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
+.debug_info     0x00000000    0x23dcd
+ .debug_info    0x00000000     0x343d ./Core/Src/main.o
+ .debug_info    0x0000343d      0xc76 ./Core/Src/stm32f3xx_hal_msp.o
+ .debug_info    0x000040b3      0x113 ./Core/Src/stm32f3xx_it.o
+ .debug_info    0x000041c6      0x6a3 ./Core/Src/syscalls.o
+ .debug_info    0x00004869      0x168 ./Core/Src/sysmem.o
+ .debug_info    0x000049d1      0x407 ./Core/Src/system_stm32f3xx.o
+ .debug_info    0x00004dd8       0x30 ./Core/Startup/startup_stm32f303k8tx.o
+ .debug_info    0x00004e08      0x74a ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o
+ .debug_info    0x00005552      0xa87 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o
+ .debug_info    0x00005fd9      0x6a6 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.o
+ .debug_info    0x0000667f     0x2048 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.o
+ .debug_info    0x000086c7      0x8cc ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.o
+ .debug_info    0x00008f93     0x14f1 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o
+ .debug_info    0x0000a484      0x550 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
+ .debug_info    0x0000a9d4     0x39a8 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o
+ .debug_info    0x0000e37c     0x4b11 ./Drivers/VL53L1X/core/src/vl53l1_api.o
+ .debug_info    0x00012e8d     0x422e ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+ .debug_info    0x000170bb     0x1426 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+ .debug_info    0x000184e1     0x3945 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+ .debug_info    0x0001be26      0x182 ./Drivers/VL53L1X/core/src/vl53l1_core_support.o
+ .debug_info    0x0001bfa8     0x2cb3 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
+ .debug_info    0x0001ec5b     0x276b ./Drivers/VL53L1X/core/src/vl53l1_wait.o
+ .debug_info    0x000213c6     0x2a07 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
 
 .debug_abbrev   0x00000000     0x2e97
  .debug_abbrev  0x00000000      0x38d ./Core/Src/main.o
@@ -6461,65 +6465,65 @@ LOAD /opt/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.
  .debug_macro   0x00021377       0xc1 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
  .debug_macro   0x00021438      0x19b ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
 
-.debug_line     0x00000000    0x182f1
- .debug_line    0x00000000      0xc9f ./Core/Src/main.o
- .debug_line    0x00000c9f      0x719 ./Core/Src/stm32f3xx_hal_msp.o
- .debug_line    0x000013b8      0x741 ./Core/Src/stm32f3xx_it.o
- .debug_line    0x00001af9      0x7e7 ./Core/Src/syscalls.o
- .debug_line    0x000022e0      0x4b8 ./Core/Src/sysmem.o
- .debug_line    0x00002798      0x6f8 ./Core/Src/system_stm32f3xx.o
- .debug_line    0x00002e90       0x7a ./Core/Startup/startup_stm32f303k8tx.o
- .debug_line    0x00002f0a      0x930 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o
- .debug_line    0x0000383a      0xb16 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o
- .debug_line    0x00004350      0xa93 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.o
- .debug_line    0x00004de3     0x37a6 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.o
- .debug_line    0x00008589      0x89c ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.o
- .debug_line    0x00008e25     0x1305 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o
- .debug_line    0x0000a12a      0x9cf ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
- .debug_line    0x0000aaf9     0x2ffe ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o
- .debug_line    0x0000daf7     0x1fce ./Drivers/VL53L1X/core/src/vl53l1_api.o
- .debug_line    0x0000fac5     0x1f2d ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
- .debug_line    0x000119f2      0xf91 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
- .debug_line    0x00012983     0x1a59 ./Drivers/VL53L1X/core/src/vl53l1_core.o
- .debug_line    0x000143dc      0xb0b ./Drivers/VL53L1X/core/src/vl53l1_core_support.o
- .debug_line    0x00014ee7     0x1781 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
- .debug_line    0x00016668      0xda8 ./Drivers/VL53L1X/core/src/vl53l1_wait.o
- .debug_line    0x00017410      0xee1 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
+.debug_line     0x00000000    0x182f4
+ .debug_line    0x00000000      0xca2 ./Core/Src/main.o
+ .debug_line    0x00000ca2      0x719 ./Core/Src/stm32f3xx_hal_msp.o
+ .debug_line    0x000013bb      0x741 ./Core/Src/stm32f3xx_it.o
+ .debug_line    0x00001afc      0x7e7 ./Core/Src/syscalls.o
+ .debug_line    0x000022e3      0x4b8 ./Core/Src/sysmem.o
+ .debug_line    0x0000279b      0x6f8 ./Core/Src/system_stm32f3xx.o
+ .debug_line    0x00002e93       0x7a ./Core/Startup/startup_stm32f303k8tx.o
+ .debug_line    0x00002f0d      0x930 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o
+ .debug_line    0x0000383d      0xb16 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o
+ .debug_line    0x00004353      0xa93 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.o
+ .debug_line    0x00004de6     0x37a6 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.o
+ .debug_line    0x0000858c      0x89c ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.o
+ .debug_line    0x00008e28     0x1305 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o
+ .debug_line    0x0000a12d      0x9cf ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
+ .debug_line    0x0000aafc     0x2ffe ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o
+ .debug_line    0x0000dafa     0x1fce ./Drivers/VL53L1X/core/src/vl53l1_api.o
+ .debug_line    0x0000fac8     0x1f2d ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+ .debug_line    0x000119f5      0xf91 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
+ .debug_line    0x00012986     0x1a59 ./Drivers/VL53L1X/core/src/vl53l1_core.o
+ .debug_line    0x000143df      0xb0b ./Drivers/VL53L1X/core/src/vl53l1_core_support.o
+ .debug_line    0x00014eea     0x1781 ./Drivers/VL53L1X/core/src/vl53l1_register_funcs.o
+ .debug_line    0x0001666b      0xda8 ./Drivers/VL53L1X/core/src/vl53l1_wait.o
+ .debug_line    0x00017413      0xee1 ./Drivers/VL53L1X/platform/src/vl53l1_platform.o
 
 .debug_str      0x00000000    0xbdee1
- .debug_str     0x00000000    0xb16f6 ./Core/Src/main.o
-                              0xb1ea3 (size before relaxing)
- .debug_str     0x000b16f6      0x103 ./Core/Src/stm32f3xx_hal_msp.o
+ .debug_str     0x00000000    0xb1721 ./Core/Src/main.o
+                              0xb1ece (size before relaxing)
+ .debug_str     0x000b1721      0x103 ./Core/Src/stm32f3xx_hal_msp.o
                               0x9573d (size before relaxing)
- .debug_str     0x000b17f9       0xc9 ./Core/Src/stm32f3xx_it.o
+ .debug_str     0x000b1824       0xc9 ./Core/Src/stm32f3xx_it.o
                               0x94f80 (size before relaxing)
- .debug_str     0x000b18c2     0x1faa ./Core/Src/syscalls.o
+ .debug_str     0x000b18ed     0x1faa ./Core/Src/syscalls.o
                                0x98a1 (size before relaxing)
- .debug_str     0x000b386c       0x6b ./Core/Src/sysmem.o
+ .debug_str     0x000b3897       0x6b ./Core/Src/sysmem.o
                                0x60b9 (size before relaxing)
- .debug_str     0x000b38d7       0xe9 ./Core/Src/system_stm32f3xx.o
+ .debug_str     0x000b3902       0xe9 ./Core/Src/system_stm32f3xx.o
                               0x94f35 (size before relaxing)
- .debug_str     0x000b39c0       0x44 ./Core/Startup/startup_stm32f303k8tx.o
+ .debug_str     0x000b39eb       0x44 ./Core/Startup/startup_stm32f303k8tx.o
                                  0x6c (size before relaxing)
- .debug_str     0x000b3a04      0x5e9 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o
+ .debug_str     0x000b3a2f      0x5e9 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o
                               0x95625 (size before relaxing)
- .debug_str     0x000b3fed      0x253 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o
+ .debug_str     0x000b4018      0x253 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o
                               0x9554a (size before relaxing)
- .debug_str     0x000b4240      0x1bb ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.o
+ .debug_str     0x000b426b      0x1bb ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.o
                               0x95114 (size before relaxing)
- .debug_str     0x000b43fb      0xe41 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.o
+ .debug_str     0x000b4426      0xe41 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.o
                               0x96238 (size before relaxing)
- .debug_str     0x000b523c       0xb8 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.o
+ .debug_str     0x000b5267       0xb8 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.o
                               0x954dc (size before relaxing)
- .debug_str     0x000b52f4      0x2ba ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o
+ .debug_str     0x000b531f      0x2ba ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o
                               0x953d5 (size before relaxing)
- .debug_str     0x000b55ae       0xb4 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
+ .debug_str     0x000b55d9       0xb4 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
                               0x950d4 (size before relaxing)
- .debug_str     0x000b5662      0x86e ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o
+ .debug_str     0x000b568d      0x86e ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o
                               0x95c58 (size before relaxing)
- .debug_str     0x000b5ed0     0x241c ./Drivers/VL53L1X/core/src/vl53l1_api.o
+ .debug_str     0x000b5efb     0x2407 ./Drivers/VL53L1X/core/src/vl53l1_api.o
                               0xb3ae7 (size before relaxing)
- .debug_str     0x000b82ec     0x44ea ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
+ .debug_str     0x000b8302     0x44d4 ./Drivers/VL53L1X/core/src/vl53l1_api_core.o
                               0xb6157 (size before relaxing)
  .debug_str     0x000bc7d6       0x88 ./Drivers/VL53L1X/core/src/vl53l1_api_preset_modes.o
                               0xb0b95 (size before relaxing)

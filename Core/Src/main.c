@@ -105,7 +105,7 @@ int main(void)
 
   /* USER CODE BEGIN 1 */
   setbuf(stdout, NULL);
-  int Dev=0x54;
+  VL53L1_Dev_t Dev;
   uint8_t st;
   VL53L1_RangingMeasurementData_t data;
 
@@ -132,12 +132,15 @@ int main(void)
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-  printf("start\n\r");
+
+  //sensor initialize
+  VL53L1_software_reset(&Dev);
   VL53L1_WaitDeviceBooted(&Dev);
-  printf("device booted\n\r");
   VL53L1_DataInit(&Dev);
-  printf("data init\n\r");
   VL53L1_StaticInit(&Dev);
+  VL53L1_SetPresetMode(&Dev, VL53L1_PRESETMODE_AUTONOMOUS);
+
+  //start
   VL53L1_StartMeasurement(&Dev);
 
   /* USER CODE END 2 */
@@ -146,11 +149,11 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	VL53L1_GetMeasurementDataReady(&Dev, st);
+	VL53L1_GetMeasurementDataReady(&Dev, &st);
 	VL53L1_GetRangingMeasurementData(&Dev,&data);
-	printf("VL53L1X: %02X\n\r", data.TimeStamp);
 	VL53L1_ClearInterruptAndStartMeasurement(&Dev);
-	HAL_Delay(10);
+	printf("VL53L1X: %d\n\r", data.RangeMilliMeter);
+	HAL_Delay(1000);
 
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
