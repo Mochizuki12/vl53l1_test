@@ -66,19 +66,18 @@
  * @brief EwokPlus25 core function definition
  */
 
-#include "../inc/vl53l1_core.h"
-
-#include "../../platform/inc/vl53l1_platform.h"
-#include "../inc/vl53l1_api_preset_modes.h"
-#include "../inc/vl53l1_ll_def.h"
-#include "../inc/vl53l1_ll_device.h"
-#include "../inc/vl53l1_register_funcs.h"
-#include "../inc/vl53l1_register_map.h"
-#include "../inc/vl53l1_register_settings.h"
-#include "../inc/vl53l1_tuning_parm_defaults.h"
+#include "vl53l1_ll_def.h"
+#include "vl53l1_ll_device.h"
+#include "vl53l1_platform.h"
+#include "vl53l1_register_map.h"
+#include "vl53l1_register_funcs.h"
+#include "vl53l1_register_settings.h"
+#include "vl53l1_api_preset_modes.h"
+#include "vl53l1_core.h"
+#include "vl53l1_tuning_parm_defaults.h"
 
 #ifdef VL53L1_LOGGING
-#include "../inc/vl53l1_api_debug.h"
+#include "vl53l1_api_debug.h"
 #include "vl53l1_debug.h"
 #include "vl53l1_register_debug.h"
 #endif
@@ -2186,6 +2185,8 @@ VL53L1_Error VL53L1_config_low_power_auto_mode(
 	/* don't really use this here */
 	VL53L1_Error  status = VL53L1_ERROR_NONE;
 
+	SUPPRESS_UNUSED_WARNING(pgeneral);
+
 	LOG_FUNCTION_START("");
 
 	/* set low power auto mode */
@@ -2199,15 +2200,10 @@ VL53L1_Error VL53L1_config_low_power_auto_mode(
 			VL53L1_SEQUENCE_VHV_EN | \
 			VL53L1_SEQUENCE_PHASECAL_EN | \
 			VL53L1_SEQUENCE_DSS1_EN | \
-			/* VL53L1_SEQUENCE_DSS2_EN | \*/
+			VL53L1_SEQUENCE_DSS2_EN | \
 			/* VL53L1_SEQUENCE_MM1_EN | \*/
 			/* VL53L1_SEQUENCE_MM2_EN | \*/
 			VL53L1_SEQUENCE_RANGE_EN;
-
-	/* Set DSS to manual/expected SPADs */
-	pgeneral->dss_config__manual_effective_spads_select = 200 << 8;
-	pgeneral->dss_config__roi_mode_control =
-		VL53L1_DEVICEDSSMODE__REQUESTED_EFFFECTIVE_SPADS;
 
 	LOG_FUNCTION_END(status);
 
@@ -2298,8 +2294,8 @@ VL53L1_Error VL53L1_low_power_auto_update_DSS(
 
 		/* get the target rate and shift up by 16
 		 * format 9.23 */
-		utemp32a = pdev->stat_cfg.dss_config__target_total_rate_mcps <<
-			16;
+		utemp32a = pdev->stat_cfg.dss_config__target_total_rate_mcps;
+		utemp32a = utemp32a << 16;
 
 		/* check for divide by zero */
 		if (pdev->low_power_auto_data.dss__total_rate_per_spad_mcps == 0)

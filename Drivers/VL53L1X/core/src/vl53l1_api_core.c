@@ -67,23 +67,22 @@
  */
 
 
-#include "../inc/vl53l1_api_core.h"
-
-#include "../../platform/inc/vl53l1_platform.h"
-#include "../inc/vl53l1_api_preset_modes.h"
-#include "../inc/vl53l1_core.h"
-#include "../inc/vl53l1_ll_def.h"
-#include "../inc/vl53l1_ll_device.h"
-#include "../inc/vl53l1_nvm_map.h"
-#include "../inc/vl53l1_register_funcs.h"
-#include "../inc/vl53l1_register_map.h"
-#include "../inc/vl53l1_register_settings.h"
-#include "../inc/vl53l1_silicon_core.h"
-#include "../inc/vl53l1_tuning_parm_defaults.h"
-#include "../inc/vl53l1_wait.h"
+#include "vl53l1_ll_def.h"
+#include "vl53l1_ll_device.h"
+#include "vl53l1_platform.h"
+#include "vl53l1_register_map.h"
+#include "vl53l1_register_settings.h"
+#include "vl53l1_register_funcs.h"
+#include "vl53l1_nvm_map.h"
+#include "vl53l1_core.h"
+#include "vl53l1_wait.h"
+#include "vl53l1_api_preset_modes.h"
+#include "vl53l1_silicon_core.h"
+#include "vl53l1_api_core.h"
+#include "vl53l1_tuning_parm_defaults.h"
 
 #ifdef VL53L1_LOG_ENABLE
-#include "../inc/vl53l1_api_debug.h"
+#include "vl53l1_api_debug.h"
 #endif
 
 #define LOG_FUNCTION_START(fmt, ...) \
@@ -2349,13 +2348,6 @@ VL53L1_Error VL53L1_get_device_results(
 		} else if ((status == VL53L1_ERROR_NONE) &&
 			(pdev->low_power_auto_data.low_power_auto_range_count == 1)) {
 			pdev->low_power_auto_data.low_power_auto_range_count = 2;
-		}
-
-		/* perform DSS calculation. This can be performed every range */
-		if ((pdev->low_power_auto_data.low_power_auto_range_count != 0xFF) &&
-			(status == VL53L1_ERROR_NONE)) {
-			status = VL53L1_low_power_auto_update_DSS(
-					Dev);
 		}
 
 	}

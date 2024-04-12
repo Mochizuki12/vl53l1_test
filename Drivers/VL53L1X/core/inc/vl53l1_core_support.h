@@ -69,7 +69,7 @@
 #ifndef _VL53L1_CORE_SUPPORT_H_
 #define _VL53L1_CORE_SUPPORT_H_
 
-#include "../../Drivers/VL53L1X/core/inc/vl53l1_types.h"
+#include "vl53l1_types.h"
 
 #ifdef __cplusplus
 extern "C" {

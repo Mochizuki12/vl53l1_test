@@ -70,8 +70,8 @@
 #ifndef _VL53L1_LL_DEVICE_H_
 #define _VL53L1_LL_DEVICE_H_
 
-#include "../../Drivers/VL53L1X/core/inc/vl53l1_types.h"
-#include "../../Drivers/VL53L1X/platform/inc/vl53l1_platform_user_config.h"
+#include "vl53l1_types.h"
+#include "vl53l1_platform_user_config.h"
 
 #define   VL53L1_I2C                      0x01
 #define   VL53L1_SPI                      0x00

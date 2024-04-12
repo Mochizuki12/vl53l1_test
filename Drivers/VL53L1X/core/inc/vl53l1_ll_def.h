@@ -71,12 +71,12 @@
 #ifndef _VL53L1_LL_DEF_H_
 #define _VL53L1_LL_DEF_H_
 
-#include "../../Drivers/VL53L1X/core/inc/vl53l1_error_codes.h"
-#include "../../Drivers/VL53L1X/core/inc/vl53l1_error_exceptions.h"
-#include "../../Drivers/VL53L1X/core/inc/vl53l1_ll_device.h"
-#include "../../Drivers/VL53L1X/core/inc/vl53l1_register_structs.h"
-#include "../../Drivers/VL53L1X/platform/inc/vl53l1_platform_user_config.h"
-#include "../../Drivers/VL53L1X/platform/inc/vl53l1_platform_user_defines.h"
+#include "vl53l1_ll_device.h"
+#include "vl53l1_error_codes.h"
+#include "vl53l1_register_structs.h"
+#include "vl53l1_platform_user_config.h"
+#include "vl53l1_platform_user_defines.h"
+#include "vl53l1_error_exceptions.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -92,11 +92,11 @@ extern "C" {
 /** VL53L1 Low Level DriverI IMPLEMENTATION minor version */
 #define VL53L1_LL_API_IMPLEMENTATION_VER_MINOR       2
 /** VL53L1 Low Level DriverI IMPLEMENTATION sub version */
-#define VL53L1_LL_API_IMPLEMENTATION_VER_SUB         10
+#define VL53L1_LL_API_IMPLEMENTATION_VER_SUB         13
 /** VL53L1 Low Level Driver IMPLEMENTATION sub version */
-#define VL53L1_LL_API_IMPLEMENTATION_VER_REVISION    1840
+#define VL53L1_LL_API_IMPLEMENTATION_VER_REVISION    2190
 
-#define VL53L1_LL_API_IMPLEMENTATION_VER_STRING "1.2.11.1840"
+#define VL53L1_LL_API_IMPLEMENTATION_VER_STRING "1.2.13.2190"
 
 /** VL53L1_FIRMWARE min and max compatible revisions */
 #define VL53L1_FIRMWARE_VER_MINIMUM         398

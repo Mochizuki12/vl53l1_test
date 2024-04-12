@@ -24,6 +24,8 @@
 #include "stdio.h"
 #include "vl53l1_def.h"
 #include "vl53l1_api.h"
+#include "vl53l1_platform.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -106,8 +108,8 @@ int main(void)
   /* USER CODE BEGIN 1 */
   setbuf(stdout, NULL);
   VL53L1_Dev_t Dev;
-  uint8_t st;
   VL53L1_RangingMeasurementData_t data;
+  int8_t Status;
 
   /* USER CODE END 1 */
 
@@ -132,27 +134,50 @@ int main(void)
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
+  Dev.I2cDevAddr = 0x54;
+  Dev.I2cHandle = &hi2c1;
+  Dev.comms_type = 1;
+  Dev.comms_speed_khz = 400;
 
-  //sensor initialize
+  //sensor initialize;
+  while(1){
+	  Status = VL53L1_WaitDeviceBooted(&Dev);
+	  break;
+	  if(Status == 0){
+	  	  break;
+	    }
+  }
   VL53L1_software_reset(&Dev);
-  VL53L1_WaitDeviceBooted(&Dev);
-  VL53L1_DataInit(&Dev);
-  VL53L1_StaticInit(&Dev);
-  VL53L1_SetPresetMode(&Dev, VL53L1_PRESETMODE_AUTONOMOUS);
+  printf("%d\n\r",Status);
+  Status = VL53L1_DataInit(&Dev);
+  printf("%d\n\r",Status);
+  Status = VL53L1_StaticInit(&Dev);
+  printf("%d\n\r",Status);
+  Status = VL53L1_SetPresetMode(&Dev, VL53L1_PRESETMODE_AUTONOMOUS);
+  printf("%d\n\r",Status);
+  Status = VL53L1_SetDistanceMode(&Dev, VL53L1_DISTANCEMODE_LONG);
+  printf("%d\n\r",Status);
+  Status = VL53L1_SetInterMeasurementPeriodMilliSeconds(&Dev, 50);
+  printf("%d\n\r",Status);
 
   //start
   VL53L1_StartMeasurement(&Dev);
-
+  I2C_Dev_Search();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	VL53L1_GetMeasurementDataReady(&Dev, &st);
+   uint8_t data_ready = 0;
+	VL53L1_GetMeasurementDataReady(&Dev, &data_ready);
+		if (!data_ready) {
+			continue;
+		}
 	VL53L1_GetRangingMeasurementData(&Dev,&data);
+
+	printf("VL53L1X: %4d\n\r", data.RangeMilliMeter);
 	VL53L1_ClearInterruptAndStartMeasurement(&Dev);
-	printf("VL53L1X: %d\n\r", data.RangeMilliMeter);
 	HAL_Delay(1000);
 
     /* USER CODE END WHILE */

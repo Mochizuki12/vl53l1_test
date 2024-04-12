@@ -67,12 +67,11 @@
  */
 
 
-#include "../inc/vl53l1_silicon_core.h"
-
-#include "../../platform/inc/vl53l1_platform.h"
-#include "../inc/vl53l1_core.h"
-#include "../inc/vl53l1_ll_def.h"
-#include "../inc/vl53l1_register_map.h"
+#include "vl53l1_ll_def.h"
+#include "vl53l1_platform.h"
+#include "vl53l1_register_map.h"
+#include "vl53l1_core.h"
+#include "vl53l1_silicon_core.h"
 
 
 #define LOG_FUNCTION_START(fmt, ...) \

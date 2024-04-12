@@ -34,15 +34,14 @@
 */
 
 
-#include "../inc/vl53l1_platform.h"
+#include "vl53l1_platform.h"
+#include "vl53l1_platform_log.h"
+#include "vl53l1_api.h"
 
 #include "stm32f3xx_hal.h"
 #include <string.h>
 #include <time.h>
 #include <math.h>
-
-#include "../../core/inc/vl53l1_api.h"
-#include "../inc/vl53l1_platform_log.h"
 
 
 #define I2C_TIME_OUT_BASE   10
