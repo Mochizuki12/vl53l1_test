@@ -162,7 +162,6 @@ int main(void)
 
   //start
   VL53L1_StartMeasurement(&Dev);
-  I2C_Dev_Search();
   /* USER CODE END 2 */
 
   /* Infinite loop */
