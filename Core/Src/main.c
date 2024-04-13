@@ -49,35 +49,7 @@ I2C_HandleTypeDef hi2c1;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-void I2C_Dev_Search(){
 
-    uint8_t FindNum=0;
-    uint8_t FindDev[128];
-
-    printf("*** I2C Device Search Start! ***\n\r");
-    for(int i=0; i<0xff;i=i+2){
-
-        uint8_t res=HAL_I2C_Master_Transmit(&hi2c1, i,(uint8_t*)0x00,0,50);
-        if(res==HAL_OK){
-            FindDev[FindNum]=i;
-            FindNum++;
-            printf("[0x%X] \t",i);
-        }
-        else{
-            printf("0x%X \t",i);
-        }
-
-        if((i+2)%10==0)printf("\n");
-        HAL_Delay(1);
-    }
-    printf("\nDevice Found: %d \n",FindNum);
-    for(int i=0; i<FindNum; i++){
-        printf("Device No. %d  Address: 0x%X (0x%X)\n",i+1,FindDev[i],FindDev[i]>>1);
-    }
-    printf("*** I2C Device Search Finished! ***\n\r");
-    HAL_Delay(100);
-
-}
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -134,20 +106,18 @@ int main(void)
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-  Dev.I2cDevAddr = 0x54;
+  Dev.I2cDevAddr = 0x52;
   Dev.I2cHandle = &hi2c1;
-  Dev.comms_type = 1;
-  Dev.comms_speed_khz = 400;
+//  Dev.comms_type = 1;
+//  Dev.comms_speed_khz = 400;
 
   //sensor initialize;
   while(1){
 	  Status = VL53L1_WaitDeviceBooted(&Dev);
-	  break;
 	  if(Status == 0){
 	  	  break;
 	    }
   }
-  VL53L1_software_reset(&Dev);
   printf("%d\n\r",Status);
   Status = VL53L1_DataInit(&Dev);
   printf("%d\n\r",Status);
@@ -177,7 +147,6 @@ int main(void)
 
 	printf("VL53L1X: %4d\n\r", data.RangeMilliMeter);
 	VL53L1_ClearInterruptAndStartMeasurement(&Dev);
-	HAL_Delay(1000);
 
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
