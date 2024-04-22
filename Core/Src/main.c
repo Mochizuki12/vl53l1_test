@@ -139,14 +139,24 @@ int main(void)
   while (1)
   {
    uint8_t data_ready = 0;
-	VL53L1_GetMeasurementDataReady(&Dev, &data_ready);
-		if (!data_ready) {
-			continue;
-		}
-	VL53L1_GetRangingMeasurementData(&Dev,&data);
+   VL53L1_UserRoi_t roiConfig;
+   int roi[12] = {};
+   roiConfig.TopLeftX = 9;
+   roiConfig.TopLeftY = 13;
+   roiConfig.BotRightX = 14;
+   roiConfig.BotRightY = 8;
+   for(int i=0; i < 6; i+4){
+	   status = VL53L1_SetUserROI(&Dev, &roiConfig);
+		VL53L1_GetMeasurementDataReady(&Dev, &data_ready);
+			if (!data_ready) {
+				continue;
+			}
+		VL53L1_GetRangingMeasurementData(&Dev,&data);
 
-	printf("VL53L1X: %4d\n\r", data.RangeMilliMeter);
-	VL53L1_ClearInterruptAndStartMeasurement(&Dev);
+		printf("VL53L1X: %4d\n\r", data.RangeMilliMeter);
+		VL53L1_ClearInterruptAndStartMeasurement(&Dev);
+   }
+
 
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
