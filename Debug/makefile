@@ -62,8 +62,8 @@ all: main-build
 main-build: vl53l1_test.elf secondary-outputs
 
 # Tool invocations
-vl53l1_test.elf vl53l1_test.map: $(OBJS) $(USER_OBJS) /home/mochizuki12/git/vl53l1_test/STM32F303K8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "vl53l1_test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/mochizuki12/git/vl53l1_test/STM32F303K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vl53l1_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+vl53l1_test.elf vl53l1_test.map: $(OBJS) $(USER_OBJS) C:\Users\Owner\Desktop\git\vl53l1_test\STM32F303K8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "vl53l1_test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Owner\Desktop\git\vl53l1_test\STM32F303K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vl53l1_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

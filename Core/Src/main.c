@@ -83,6 +83,12 @@ int main(void)
   VL53L1_RangingMeasurementData_t data;
   int8_t Status;
 
+  VL53L1_UserRoi_t roiConfig;
+  int roi[18] = {0, 0, 3, 15,
+  	   	   	   	 4, 0, 7, 15,
+  	   	   	   	 8, 0, 11, 15,
+  	   	   	   	 12, 0, 15, 15}; //left to right
+
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -129,6 +135,7 @@ int main(void)
   printf("%d\n\r",Status);
   Status = VL53L1_SetInterMeasurementPeriodMilliSeconds(&Dev, 50);
   printf("%d\n\r",Status);
+  VL53L1_SetMeasurementTimingBudgetMicroSeconds(&Dev, 50000);
 
   //start
   VL53L1_StartMeasurement(&Dev);
@@ -138,25 +145,51 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-   uint8_t data_ready = 0;
-   VL53L1_UserRoi_t roiConfig;
-   int roi[12] = {};
-   roiConfig.TopLeftX = 9;
-   roiConfig.TopLeftY = 13;
-   roiConfig.BotRightX = 14;
-   roiConfig.BotRightY = 8;
-   for(int i=0; i < 6; i+4){
-	   status = VL53L1_SetUserROI(&Dev, &roiConfig);
-		VL53L1_GetMeasurementDataReady(&Dev, &data_ready);
-			if (!data_ready) {
-				continue;
-			}
-		VL53L1_GetRangingMeasurementData(&Dev,&data);
+   int i, pre_tim;
+   int range[5];
+   float hz;
 
-		printf("VL53L1X: %4d\n\r", data.RangeMilliMeter);
-		VL53L1_ClearInterruptAndStartMeasurement(&Dev);
+/*ROI SETTING*/
+//   roiConfig.TopLeftX = 0;
+//   roiConfig.TopLeftY = 0;
+//   roiConfig.BotRightX = 3;
+//   roiConfig.BotRightY = 15;
+//
+//   roiConfig.TopLeftX = 4;
+//   roiConfig.TopLeftY = 0;
+//   roiConfig.BotRightX = 7;
+//   roiConfig.BotRightY = 15;
+//
+//   roiConfig.TopLeftX = 8;
+//   roiConfig.TopLeftY = 0;
+//   roiConfig.BotRightX = 11;
+//   roiConfig.BotRightY = 15;
+//
+//   roiConfig.TopLeftX = 12;
+//   roiConfig.TopLeftY = 0;
+//   roiConfig.BotRightX = 15;
+//   roiConfig.BotRightY = 15;
+
+
+   for(i=0; i <= 3; i++){
+	   int j;
+	   j = i+(i*3);
+	   roiConfig.TopLeftX = roi[j];
+	   roiConfig.TopLeftY = roi[j+1];
+	   roiConfig.BotRightX = roi[j+2];
+	   roiConfig.BotRightY = roi[j+3];
+	   Status = VL53L1_SetUserROI(&Dev, &roiConfig);
+
+	   VL53L1_WaitMeasurementDataReady(&Dev);
+	   VL53L1_GetRangingMeasurementData(&Dev,&data);
+	   range[i] = data.RangeMilliMeter;
+
+	   VL53L1_clear_interrupt_and_enable_next_range(&Dev, VL53L1_DEVICEMEASUREMENTMODE_SINGLESHOT);
    }
-
+   hz = 1/((float)HAL_GetTick()-(float)pre_tim)*1000;
+   printf("%d VL53L1X: %4d, %4d, %4d, %4d, %fHz\n\r", HAL_GetTick(), range[0], range[1], range[2], range[3], hz);
+   pre_tim = HAL_GetTick();
+   VL53L1_ClearInterruptAndStartMeasurement(&Dev);
 
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
