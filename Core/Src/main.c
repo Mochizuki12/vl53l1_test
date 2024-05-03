@@ -84,10 +84,22 @@ int main(void)
   int8_t Status;
 
   VL53L1_UserRoi_t roiConfig;
-  int roi[18] = {0, 0, 3, 15,
-  	   	   	   	 4, 0, 7, 15,
-  	   	   	   	 8, 0, 11, 15,
-  	   	   	   	 12, 0, 15, 15}; //left to right
+  int roi[65] = {0, 15, 0, 0,
+  	   	   	   	 1, 15, 1, 0,
+				 2, 15, 2, 0,
+				 3, 15, 3, 0,
+				 4, 15, 4, 0,
+				 5, 15, 5, 0,
+				 6, 15, 6, 0,
+				 7, 15, 7, 0,
+				 8, 15, 8, 0,
+				 9, 15, 9, 0,
+				 10, 15, 10, 0,
+				 11, 15, 11, 0,
+				 12, 15, 12, 0,
+				 13, 15, 13, 0,
+				 14, 15, 14, 0,
+				 15, 15, 15, 0}; //left to right
 
   /* USER CODE END 1 */
 
@@ -129,13 +141,13 @@ int main(void)
   printf("%d\n\r",Status);
   Status = VL53L1_StaticInit(&Dev);
   printf("%d\n\r",Status);
-  Status = VL53L1_SetPresetMode(&Dev, VL53L1_PRESETMODE_AUTONOMOUS);
+  Status = VL53L1_SetPresetMode(&Dev, VL53L1_PRESETMODE_LITE_RANGING);
   printf("%d\n\r",Status);
-  Status = VL53L1_SetDistanceMode(&Dev, VL53L1_DISTANCEMODE_LONG);
+  Status = VL53L1_SetDistanceMode(&Dev, VL53L1_DISTANCEMODE_SHORT);
   printf("%d\n\r",Status);
-  Status = VL53L1_SetInterMeasurementPeriodMilliSeconds(&Dev, 50);
+  Status = VL53L1_SetInterMeasurementPeriodMilliSeconds(&Dev, 15);
   printf("%d\n\r",Status);
-  VL53L1_SetMeasurementTimingBudgetMicroSeconds(&Dev, 50000);
+  VL53L1_SetMeasurementTimingBudgetMicroSeconds(&Dev, 10000);
 
   //start
   VL53L1_StartMeasurement(&Dev);
@@ -146,7 +158,7 @@ int main(void)
   while (1)
   {
    int i, pre_tim;
-   int range[5];
+   int range[17];
    float hz;
 
 /*ROI SETTING*/
@@ -171,7 +183,7 @@ int main(void)
 //   roiConfig.BotRightY = 15;
 
 
-   for(i=0; i <= 3; i++){
+   for(i=0; i <= 16; i++){
 	   int j;
 	   j = i+(i*3);
 	   roiConfig.TopLeftX = roi[j];
@@ -184,12 +196,16 @@ int main(void)
 	   VL53L1_GetRangingMeasurementData(&Dev,&data);
 	   range[i] = data.RangeMilliMeter;
 
-	   VL53L1_clear_interrupt_and_enable_next_range(&Dev, VL53L1_DEVICEMEASUREMENTMODE_SINGLESHOT);
+	   VL53L1_ClearInterruptAndStartMeasurement(&Dev);
    }
    hz = 1/((float)HAL_GetTick()-(float)pre_tim)*1000;
-   printf("%d VL53L1X: %4d, %4d, %4d, %4d, %fHz\n\r", HAL_GetTick(), range[0], range[1], range[2], range[3], hz);
+
+   printf("%d VL53L1X: ", HAL_GetTick());
+   for(i=0; i <= 16; i++){
+	   printf("%d, ", range[i]);
+   }
+   printf("%fHz\n\r", hz);
    pre_tim = HAL_GetTick();
-   VL53L1_ClearInterruptAndStartMeasurement(&Dev);
 
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
